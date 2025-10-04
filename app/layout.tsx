@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Source_Sans_3, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import MenuBar from './menubar';
+import MenuBar from '../components/menubar';
+import Sidebar from '../components/sidebar';
 
 const sourceSansPro = Source_Sans_3({
   variable: '--font-source-sans-pro',
@@ -25,9 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sourceSansPro.variable} ${jetBrainsMono.variable} antialiased`}>
+      <body
+        className={`${sourceSansPro.variable} ${jetBrainsMono.variable} antialiased grid grid-rows-[auto_1fr] h-screen`}>
         <MenuBar />
-        {children}
+        <Sidebar>{children}</Sidebar>
       </body>
     </html>
   );
