@@ -1,8 +1,73 @@
 @import 'tailwindcss';
 
 :root {
+  --background: #24292e;
+  --foreground: #e1e4e8;
+  --border-bg: #1b1f23;
+  /* menubar */
+  --menubar-bg: #24292e;
+  --menubar-fg: #e1e4e8;
+  --menubar-hover-bg: #586069;
+  --menubar-hover-fg: #e1e4e8;
+  /* sidebar */
+  --sidebar-bg: #24292e;
+  --sidebar-fg: #6a737d;
+  --sidebar-active-indicator: #f9826c;
+  --sidebar-hover-fg: #e1e4e8;
+  --sidebar-active-fg: #e1e4e8;
+  /* explorer */
+  --explorer-bg: #1f2428;
+  --explorer-fg: #e1e4e8;
+  --explorer-hover-bg: #586069;
+  --explorer-hover-fg: #e1e4e8;
+  --explorer-active-bg: #586069;
+  --explorer-active-fg: #e1e4e8;
+  /* tab group */
+  --tab-group-bg: #1f2428;
+  --tab-item-bg: #1f2428;
+  --tab-item-fg: #e1e4e8;
+  --tab-item-hover-bg: #24292e;
+  --tab-item-hover-fg: #e1e4e8;
+  --tab-item-active-bg: #24292e;
+  --tab-item-active-fg: #e1e4e8;
+  /* main content */
+  --content-bg: #24292e;
+  --content-fg: #e1e4e8;
+}
+
+[data-theme='github-light'] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2f363d;
+  --border-bg: #e1e4e8;
+  /* menubar */
+  --menubar-bg: #ffffff;
+  --menubar-fg: #2f363d;
+  --menubar-hover-bg: #ebf0f4;
+  --menubar-hover-fg: #2f363d;
+  /* sidebar */
+  --sidebar-bg: #ffffff;
+  --sidebar-fg: #959da5;
+  --sidebar-active-indicator: #f9826c;
+  --sidebar-hover-fg: #2f363d;
+  --sidebar-active-fg: #2f363d;
+  /* explorer */
+  --explorer-bg: #f6f8fa;
+  --explorer-fg: #2f363d;
+  --explorer-hover-bg: #ebf0f4;
+  --explorer-hover-fg: #2f363d;
+  --explorer-active-bg: #ebf0f4;
+  --explorer-active-fg: #2f363d;
+  /* tab group */
+  --tab-group-bg: #f6f8fa;
+  --tab-item-bg: #f6f8fa;
+  --tab-item-fg: #2f363d;
+  --tab-item-hover-bg: #ffffff;
+  --tab-item-hover-fg: #2f363d;
+  --tab-item-active-bg: #ffffff;
+  --tab-item-active-fg: #2f363d;
+  /* main content */
+  --content-bg: #ffffff;
+  --content-fg: #2f363d;
 }
 
 @theme inline {
@@ -10,13 +75,36 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #24292e;
-    --foreground: #ededed;
-  }
+  --color-border: var(--border-bg);
+  /* menubar */
+  --color-menubar-bg: var(--menubar-bg);
+  --color-menubar: var(--menubar-fg);
+  --hover-color-menubar-bg: var(--menubar-hover-bg);
+  --hover-color-menubar: var(--menubar-hover-fg);
+  /* sidebar */
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar: var(--sidebar-fg);
+  --active-color-sidebar-indicator: var(--sidebar-active-indicator);
+  --hover-color-sidebar: var(--sidebar-hover-fg);
+  --active-color-sidebar: var(--sidebar-active-fg);
+  /* explorer */
+  --color-explorer-bg: var(--explorer-bg);
+  --color-explorer: var(--explorer-fg);
+  --hover-color-explorer-bg: var(--explorer-hover-bg);
+  --hover-color-explorer: var(--explorer-hover-fg);
+  --active-color-explorer-bg: var(--explorer-active-bg);
+  --active-color-explorer: var(--explorer-active-fg);
+  /* tab group */
+  --color-tab-group-bg: var(--tab-group-bg);
+  --color-tab-item-bg: var(--tab-item-bg);
+  --color-tab-item: var(--tab-item-fg);
+  --hover-color-tab-item-bg: var(--tab-item-hover-bg);
+  --hover-color-tab-item: var(--tab-item-hover-fg);
+  --active-color-tab-item-bg: var(--tab-item-active-bg);
+  --active-color-tab-item: var(--tab-item-active-fg);
+  /* main content */
+  --color-content-bg: var(--content-bg);
+  --color-content: var(--content-fg);
 }
 
 html {
@@ -43,9 +131,9 @@ html::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
 /* sidebar: 1F2428 */

@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const files = [
@@ -9,25 +10,27 @@ const files = [
   { name: 'contact.css', icon: 'css3.svg', href: '/contact' },
   { name: 'projects.js', icon: 'javascript.svg', href: '/projects' },
   { name: 'articles.ts', icon: 'typescript.svg', href: '/articles' },
-  { name: 'github.md', icon: 'markdown.svg', href: '/github' },
+  { name: 'github.md', icon: 'markdown.svg', href: '/github' }
 ];
 
 const FileTabs = () => {
   const pathname = usePathname();
 
   return (
-    <div className="overflow-x-auto">
-      <ul className="flex whitespace-nowrap min-w-fit">
+    <div className='overflow-x-auto'>
+      <ul className='flex min-w-fit whitespace-nowrap'>
         {files.map((file) => {
           const isActive = file.href === pathname;
 
           return (
             <li
               key={file.name}
-              className={`flex-shrink-0 py-2 px-4 hover:bg-[#24292e] border-r border-r-neutral-900 ${
-                isActive ? 'bg-[#24292e]' : ''
+              className={`flex-shrink-0 border-r border-r-[var(--color-border)] px-4 py-2 hover:bg-[var(--hover-color-tab-item-bg)] hover:text-[var(--hover-color-tab-item)] ${
+                isActive
+                  ? 'bg-[var(--active-color-tab-item-bg)] text-[var(--active-color-tab-item)]'
+                  : 'bg-[var(--color-tab-item-bg)] text-[var(--color-tab-item)]'
               }`}>
-              <Link href={file.href} className="flex items-center gap-2">
+              <Link href={file.href} className='flex items-center gap-2'>
                 <Image src={file.icon} alt={file.name} height={14} width={14} unoptimized />
                 <span>{file.name}</span>
               </Link>
