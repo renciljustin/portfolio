@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sourceSansPro.variable} ${jetBrainsMono.variable} antialiased grid grid-rows-[auto_1fr] h-screen`}>
+        className={`${sourceSansPro.variable} ${jetBrainsMono.variable} antialiased grid grid-rows-[auto_1fr] h-dvh`}>
         <MenuBar />
         <Sidebar>{children}</Sidebar>
       </body>

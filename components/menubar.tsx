@@ -35,9 +35,9 @@ const MenuBar = () => {
 
       {/* Right */}
       <div className="flex items-center gap-2 ml-auto">
-        <div className="w-3.5 h-3.5 rounded-full bg-red-500"></div>
-        <div className="w-3.5 h-3.5 rounded-full bg-yellow-500"></div>
         <div className="w-3.5 h-3.5 rounded-full bg-green-500"></div>
+        <div className="w-3.5 h-3.5 rounded-full bg-yellow-500"></div>
+        <div className="w-3.5 h-3.5 rounded-full bg-red-500"></div>
       </div>
     </nav>
   );
