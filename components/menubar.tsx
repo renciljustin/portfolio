@@ -8,7 +8,7 @@ const menu = ['Home', 'Edit', 'View', 'Go', 'Run', 'Terminal', 'Help'];
 
 const MenuBar = () => {
   return (
-    <nav className='flex items-center border-b border-b-neutral-900 p-1.5 text-sm'>
+    <nav className='bg-menubar-bg flex items-center border-b border-b-[var(--color-border)] p-1.5 text-sm'>
       {/* Left */}
       <div className='flex gap-x-1'>
         <Image
@@ -20,7 +20,9 @@ const MenuBar = () => {
           className='mx-1.5'
         />
         {menu.map((item) => (
-          <span key={item} className='hidden cursor-default rounded px-1.5 py-0.5 hover:bg-neutral-700 lg:inline-block'>
+          <span
+            key={item}
+            className='hidden cursor-default rounded bg-[var(--color-menubar-bg)] px-1.5 py-0.5 text-[var(--color-menubar)] hover:bg-[var(--hover-color-menubar-bg)] hover:text-[var(--hover-color-menubar)] lg:inline-block'>
             {item}
           </span>
         ))}

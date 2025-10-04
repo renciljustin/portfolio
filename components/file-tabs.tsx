@@ -25,8 +25,10 @@ const FileTabs = () => {
           return (
             <li
               key={file.name}
-              className={`flex-shrink-0 border-r border-r-neutral-900 px-4 py-2 hover:bg-[#24292e] ${
-                isActive ? 'bg-[#24292e]' : ''
+              className={`flex-shrink-0 border-r border-r-[var(--color-border)] px-4 py-2 hover:bg-[var(--hover-color-tab-item-bg)] hover:text-[var(--hover-color-tab-item)] ${
+                isActive
+                  ? 'bg-[var(--active-color-tab-item-bg)] text-[var(--active-color-tab-item)]'
+                  : 'bg-[var(--color-tab-item-bg)] text-[var(--color-tab-item)]'
               }`}>
               <Link href={file.href} className='flex items-center gap-2'>
                 <Image src={file.icon} alt={file.name} height={14} width={14} unoptimized />

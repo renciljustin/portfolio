@@ -29,7 +29,9 @@ const Explorer = () => {
           const isActive = file.href === pathname;
 
           return (
-            <li key={file.name} className={`py-[1px] pl-8 hover:bg-[#24292e] ${isActive && 'bg-[#24292e]'}`}>
+            <li
+              key={file.name}
+              className={`py-[1px] pl-8 hover:bg-[var(--hover-color-explorer-bg)] ${isActive && 'bg-[var(--active-color-explorer-bg)] text-[var(--active-color-explorer)]'}`}>
               <Link href={file.href} className='flex items-center gap-2'>
                 <Image src={file.icon} alt={file.name} height={14} width={14} unoptimized={true} />
                 <span>{file.name}</span>

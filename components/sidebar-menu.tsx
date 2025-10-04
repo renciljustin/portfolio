@@ -38,7 +38,9 @@ const SideBarMenu = () => {
               <Link key={item.label} href={item.href} className='relative flex w-full justify-center'>
                 <div
                   className={`relative cursor-pointer px-3 py-2 transition-colors ${
-                    isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+                    isActive
+                      ? 'text-[var(--active-color-sidebar)]'
+                      : 'text-[var(--color-sidebar)] hover:text-[var(--hover-color-sidebar)]'
                   }`}>
                   {isActive && <div className='absolute top-1/2 left-0 h-12 w-1 -translate-y-1/2 bg-orange-500' />}
                   <item.icon strokeWidth={1} className='size-8' />
@@ -57,9 +59,13 @@ const SideBarMenu = () => {
               <Link key={item.label} href={item.href} className='relative flex w-full justify-center'>
                 <div
                   className={`relative cursor-pointer px-3 py-2 transition-colors ${
-                    isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+                    isActive
+                      ? 'text-[var(--active-color-sidebar)]'
+                      : 'text-[var(--color-sidebar)] hover:text-[var(--hover-color-sidebar)]'
                   }`}>
-                  {isActive && <div className='absolute top-1/2 left-0 h-12 w-1 -translate-y-1/2 bg-orange-500' />}
+                  {isActive && (
+                    <div className='absolute top-1/2 left-0 h-12 w-1 -translate-y-1/2 bg-[var(--active-color-sidebar-indicator)]' />
+                  )}
                   <item.icon strokeWidth={1} className='size-8' />
                 </div>
               </Link>

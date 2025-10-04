@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { JetBrains_Mono, Source_Sans_3 } from 'next/font/google';
 
+import { ThemeProvider } from '@/components/providers/theme-provider';
+
 import MenuBar from '../components/menubar';
 import Sidebar from '../components/sidebar';
 import './globals.css';
@@ -29,8 +31,10 @@ export default function RootLayout({
     <html lang='en'>
       <body
         className={`${sourceSansPro.variable} ${jetBrainsMono.variable} grid h-dvh grid-rows-[auto_1fr] antialiased`}>
-        <MenuBar />
-        <Sidebar>{children}</Sidebar>
+        <ThemeProvider>
+          <MenuBar />
+          <Sidebar>{children}</Sidebar>
+        </ThemeProvider>
       </body>
     </html>
   );
